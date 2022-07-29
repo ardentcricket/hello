@@ -52,6 +52,7 @@ func main() {
 		fmt.Println(msg)
 	}
 	fmt.Println(shouldEscape('?'))
+	fmt.Println(calculator(20,5))
 }
 	
 func count(thing string, c chan string) {
@@ -69,3 +70,21 @@ func shouldEscape(input byte) bool {
 	return false
 }
 
+func unhex(c byte) byte {
+	switch {
+	case '0' <= c && c <= '9':
+		return c - '0'
+	case 'a' <= c && c <= 'f':
+		return c - 'a' + 10
+	case 'A' <= c && c <= 'F':
+		return c - 'A' + 10
+	}
+
+	return 0
+}
+
+func calculator( a int, b int) (mul int, div int) {
+	mul = a * b
+	div = a / b
+	return
+}
