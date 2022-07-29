@@ -61,11 +61,11 @@ func count(thing string, c chan string) {
 
 }
 
-func shouldEscape(c byte) bool {
-    switch c {
-    case ' ', '?', '&', '=', '#', '+', '%':
-        return true
-    }
-    return false
+func shouldEscape(input byte) bool {
+	switch input {
+	case '?', '&', ' ', '=', '#', '+', '%':
+		return true
+	}
+	return false
 }
 
